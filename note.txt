@@ -1,0 +1,28 @@
+安装koa框架
+> npm init 创建package.json配置文件
+> npm install koa --save 安装koa并且依赖到package.json配置文件，只要在package.json正确设置了依赖，npm就会把所有用到的包都装好
+> npm install
+创建入口文件app.js
+> node app.js
+发生错误：
+        F:\study\koajs>node app.js
+        F:\study\koajs\app.js:6
+        app.use(async(context,next)=>{
+                    ^
+
+        SyntaxError: Unexpected token (
+            at exports.runInThisContext (vm.js:53:16)
+            at Module._compile (module.js:387:25)
+            at Object.Module._extensions..js (module.js:422:10)
+            at Module.load (module.js:357:32)
+            at Function.Module._load (module.js:314:12)
+            at Function.Module.runMain (module.js:447:10)
+            at startup (node.js:139:18)
+            at node.js:999:3
+node版本太低，需要更新node。
+window更新node，直接官网下载安装即可
+
+
+
+
+

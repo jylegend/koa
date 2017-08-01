@@ -1,0 +1,31 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "练习koa框架",
+  "main": "app.js",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "koa": "^2.0.0",
+    "koa-generator": "^1.1.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jylegend/koa.git"
+  },
+  "keywords": [
+    "koa",
+    "node",
+    "async"
+  ],
+  "author": "legend",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jylegend/koa/issues"
+  },
+  "homepage": "https://github.com/jylegend/koa#readme"
+}
