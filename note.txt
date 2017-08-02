@@ -19,8 +19,10 @@
             at Function.Module.runMain (module.js:447:10)
             at startup (node.js:139:18)
             at node.js:999:3
-node版本太低，需要更新node。
+使用koa2版本需要本地node版本高于7.6版本，node版本太低，需要更新node。
 window更新node，直接官网下载安装即可
+教程：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471133885340dad9058705804899b1cc2d0a10e7dc80000
+
 
 
 
