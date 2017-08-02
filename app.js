@@ -2,19 +2,65 @@ const Koa=require('koa'); //导入koa
 
 const app=new Koa();
 
-<<<<<<< HEAD
 const bodyParse=require('koa-bodyparser');//body 解析
 
 const controller=require('./controllers/controller');
 
-app.use(bodyParse());
-
-app.use(controller());
-=======
 const router=require('koa-router')();
 
-const bodyParse=require('koa-bodyparser');//body 解析
+const Sequelize=require('sequelize');
 
+const config=require('./config.js');
+
+var sequelize=new Sequelize(config.database,config.username,config.password,{
+	host:config.host,
+	dialect:'mysql',
+	pool:{
+		max:5,
+		min:0,
+		idle:30000
+	}
+});
+var Pet=sequelize.define('pet',{
+	id:{
+		type:Sequelize.STRING(50),
+		primaryKey:true
+	},
+	name: Sequelize.STRING(100),
+    gender: Sequelize.BOOLEAN,
+    birth: Sequelize.STRING(10),
+    createdAt: Sequelize.BIGINT,
+    updatedAt: Sequelize.BIGINT,
+    version: Sequelize.BIGINT
+},{timestamps:false});
+
+var now=Date.now();
+// Pet.create({
+// 	id:'g-'+now,
+// 	name:'Jiangyuan',
+// 	gender:false,
+// 	birth:new Date().toLocaleTimeString(),
+// 	createdAt: now,
+//     updatedAt: now,
+//     version: 0
+// }).then(function(p){
+// 	console.log("Success:"+JSON.stringify(p));
+// }).catch(function(err){
+// 	console.log('Failed:'+err);
+// });
+
+(async ()=>{
+	var _n = await Pet.create({
+		id: 'g-' + now,
+		name: 'Jiangyuan',
+		gender: false,
+		birth: new Date().toLocaleTimeString(),
+		createdAt: now,
+		updatedAt: now,
+		version: 0
+	});
+	console.log("Success:"+JSON.stringify(p));
+})();
 /*调用app.use()的顺序决定了middleware的顺序*/
 /*如果一个middleware没有调用await next(),后续的middleware将不再执行了*/
 /*middleware*/
@@ -40,7 +86,6 @@ router.get('/',async (context,next)=>{
             <p><input type="submit" value="Submit"></p>
         </form>`;
 });
->>>>>>> a496dae97f2b2bbe7906fcf79f4609a32d3a4eb9
 
 //router url get
 router.get('/:name',async(context,next)=>{
